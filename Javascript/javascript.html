@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Quote Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .quote-box {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      max-width: 400px;
+      text-align: center;
+    }
+    .quote {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .author {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 1.5rem;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      background: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<div class="quote-box">
+  <div class="quote" id="quote">Click the button to get a quote!</div>
+  <div class="author" id="author"></div>
+  <button onclick="generateQuote()">New Quote</button>
+</div>
+
+<script>
+  const quotes = [
+  { text: "The best way to get started is to quit talking and begin doing.", author: "Walt Disney" },
+  { text: "Success is not in what you have, but who you are.", author: "Bo Bennett" },
+  { text: "The only limit to our realization of tomorrow is our doubts of today.", author: "Franklin D. Roosevelt" },
+  { text: "It always seems impossible until it’s done.", author: "Nelson Mandela" },
+  { text: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" },
+  { text: "Your time is limited, so don’t waste it living someone else’s life.", author: "Steve Jobs" },
+  { text: "Don’t watch the clock; do what it does. Keep going.", author: "Sam Levenson" },
+  { text: "Keep your face always toward the sunshine—and shadows will fall behind you.", author: "Walt Whitman" },
+  { text: "Opportunities don't happen. You create them.", author: "Chris Grosser" },
+  { text: "Everything you’ve ever wanted is on the other side of fear.", author: "George Addair" },
+  { text: "Happiness is not something ready made. It comes from your own actions.", author: "Dalai Lama" },
+  { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+  { text: "In the middle of every difficulty lies opportunity.", author: "Albert Einstein" },
+  { text: "Do what you can, with what you have, where you are.", author: "Theodore Roosevelt" },
+  { text: "Success usually comes to those who are too busy to be looking for it.", author: "Henry David Thoreau" },
+  { text: "Hardships often prepare ordinary people for an extraordinary destiny.", author: "C.S. Lewis" },
+  { text: "It does not matter how slowly you go as long as you do not stop.", author: "Confucius" },
+  { text: "Act as if what you do makes a difference. It does.", author: "William James" },
+  { text: "The harder you work for something, the greater you'll feel when you achieve it.", author: "Anonymous" },
+  { text: "Dream big and dare to fail.", author: "Norman Vaughan" }
+];
+
+
+  function generateQuote() {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    const quote = quotes[randomIndex];
+    document.getElementById('quote').textContent = `"${quote.text}"`;
+    document.getElementById('author').textContent = `- ${quote.author}`;
+  }
+</script>
+
+</body>
+</html>
